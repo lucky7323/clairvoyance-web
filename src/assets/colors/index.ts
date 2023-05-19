@@ -1,0 +1,12 @@
+export const COLOR = {
+  BLACK: '#191F28',
+  WHITE: '#FFFFFF',
+
+  GRAY7: '#1F2732',
+  GRAY6: '#333D4B',
+  GRAY5: '#515A68',
+  GRAY4: '#6D7684',
+  GRAY3: '#ADB3BE',
+  GRAY2: '#E5E7EC',
+  GRAY1: '#F3F4F5',
+};

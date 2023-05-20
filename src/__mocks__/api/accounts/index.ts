@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { rest } from 'msw';
 
-import L2Client from '~/configs/l2Client';
 import { API_URL } from '~/constants';
 
 export const apiAccounts = [
@@ -36,12 +35,12 @@ export const apiAccounts = [
     // const zkProvider = await getZkBNBDefaultProvider(network);
     // setZkProvider(zkProvider);
 
-    // init l2 client
-    const l2client = L2Client.getInstance();
-    await l2client.init();
+    // // init l2 client
+    // const l2client = L2Client.getInstance();
+    // await l2client.init();
 
-    const result = await l2client.getData();
-    console.log(result);
+    // const result = await l2client.getData();
+    // console.log(result);
 
     const data = 10;
     return res(ctx.status(200), ctx.json({ data }));

@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Client } from '@bnb-chain/zkbnb-js-sdk';
 
 export enum TxType {
   Empty = 0,
@@ -22,11 +21,6 @@ export enum TxType {
 
 export default class L2Client {
   static instance: L2Client;
-  private client: any;
-
-  async init() {
-    this.client = new Client('https://api-testnet.zkbnbchain.org');
-  }
 
   async getData(): Promise<string> {
     // const res = await this.client.getAccountInfoByAccountIndex(59);

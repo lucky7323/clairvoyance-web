@@ -14,6 +14,13 @@ body {
   height: 100%;
 }
 
+/* remove outline */
+button,
+input,
+select {
+  @apply focus:outline-none;
+}
+
 /* remove input number up down button */
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button,
@@ -23,6 +30,13 @@ input[type='number'] {
   -moz-appearance: textfield !important;
 }
 
+input:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+input,
+select,
 button {
   border: none;
   outline: none;

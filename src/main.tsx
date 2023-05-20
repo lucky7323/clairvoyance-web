@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <WagmiConfig client={client}>
-        <ConnectKitProvider theme="auto" mode="light">
+        <ConnectKitProvider theme="auto" mode="dark">
           <App />
         </ConnectKitProvider>
       </WagmiConfig>

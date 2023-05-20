@@ -18,9 +18,9 @@ const Wrapper = tw.div`
 `;
 
 const InnerWrapper = tw.div`
-  flex flex-col items-start gap-8 p-0
+  flex flex-col items-center gap-8 p-0
 `;
 
 const Text = tw.div`
-  font-l-12 text-gray3 h-20
+  font-l-12 text-gray3
 `;

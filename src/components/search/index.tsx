@@ -24,7 +24,7 @@ export const Search = ({ ...rest }: Props) => {
       <Wrapper className="group" typing={!!typedValue}>
         <IconSearch color={COLOR.GRAY5} width={20} height={20} />
         <Input
-          placeholder="Search markets or polls"
+          placeholder="Search Address / Transaction Hash"
           onChange={e => handleChange(e)}
           value={typedValue}
           typing={!!typedValue}
@@ -73,7 +73,7 @@ const Wrapper = styled.div<InputProps>(({ typing }: InputProps) => [
 
 const Input = styled.input<InputProps>(({ typing }: InputProps) => [
   tw`
-    font-sans w-166 h-full font-r-14 bg-transparent placeholder:text-gray5
+    font-sans w-full h-full font-r-14 bg-transparent placeholder:text-gray5
     group-hover:text-white
   `,
   typing &&

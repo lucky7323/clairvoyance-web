@@ -3,6 +3,7 @@ import tw from 'twin.macro';
 
 import { useChangeWallet } from '~/hooks/data/use-change-wallet';
 
+import BlockPage from './pages/blocks';
 import MainPage from './pages/main';
 
 const RouteWrapper = tw.main`relative w-full h-full`;
@@ -15,6 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/home" element={<MainPage />} />
+          <Route path="/block" element={<BlockPage />} />
           <Route path="/bridge" element={<MainPage />} />
           <Route path="/account" element={<MainPage />} />
           <Route path="/nft" element={<MainPage />} />

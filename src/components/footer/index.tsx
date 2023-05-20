@@ -7,7 +7,7 @@ export const Footer = () => {
     <Wrapper>
       <InnerWrapper>
         <img src={logo} width={200} />
-        <Text>© 2023 Clairvoyance, Inc. All Rights Reserved</Text>
+        <Text>© 2023 Tony Lee. All Rights Reserved</Text>
       </InnerWrapper>
     </Wrapper>
   );

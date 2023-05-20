@@ -4,7 +4,7 @@ import { AxiosError } from 'axios';
 import { api } from '~/api/axios';
 
 interface AccountDiscoversResponse {
-  data: number;
+  data: { numTx: number; timestamp: Date }[];
 }
 type AccountDiscoversQueryOptions = UseQueryOptions<
   AccountDiscoversResponse,

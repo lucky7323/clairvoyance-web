@@ -16,6 +16,13 @@ export const SIDEBAR_MENU = [
     icon: <IconProfileFill color={COLOR.WHITE} />,
   },
   {
+    path: '/block',
+    activeKeyword: 'block',
+    name: 'Blocks',
+    iconActive: <IconProfileFill color={COLOR.WHITE} />,
+    icon: <IconProfileFill color={COLOR.WHITE} />,
+  },
+  {
     path: '/bridge',
     activeKeyword: 'bridge',
     name: 'Bridge',

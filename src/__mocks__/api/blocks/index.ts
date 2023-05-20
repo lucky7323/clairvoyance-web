@@ -200,7 +200,7 @@ export const apiAccounts = [
   rest.get(`${API_URL}/fees`, async (_req, res, ctx) => {
     const data: {
       timestamp: Date;
-      fee: number;
+      fees: number;
     }[] = [];
     for (let i = 3; i < 22; ++i) {
       const feeData = blockDB.txs.findMany({
@@ -219,7 +219,7 @@ export const apiAccounts = [
 
       data.push({
         timestamp: new Date(2023, 4, i),
-        fee: feeAmount,
+        fees: feeAmount,
       });
     }
 

@@ -1,4 +1,6 @@
 import {
+  Bar,
+  BarChart,
   CartesianGrid,
   Label,
   Line,
@@ -33,8 +35,6 @@ const MainPage = () => {
     staleTime: Infinity,
     enabled: true,
   });
-
-  console.log(fees?.data);
 
   return (
     <Wrapper>
@@ -118,9 +118,9 @@ const MainPage = () => {
           </ResponsiveContainer>
         </TransactionChart>
         <TransactionChart>
-          <ChartTitle>Total Fees</ChartTitle>
+          <ChartTitle>Daily Fees</ChartTitle>
           <ResponsiveContainer width={'100%'} height={'100%'} minHeight={300}>
-            <LineChart
+            <BarChart
               width={900}
               height={300}
               data={fees?.data}
@@ -141,13 +141,13 @@ const MainPage = () => {
               </XAxis>
               <YAxis>
                 <Label angle={-90} dx={-20}>
-                  total fees
+                  daily fees ($BNB)
                 </Label>
               </YAxis>
 
               <Tooltip />
-              <Line type="monotone" dataKey="fees" name="total fees" stroke="#82ca9d" />
-            </LineChart>
+              <Bar type="monotone" dataKey="fees" name="total fees" fill="#82ca9d" />
+            </BarChart>
           </ResponsiveContainer>
         </TransactionChart>
         <Footer />

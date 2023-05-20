@@ -32,3 +32,25 @@ export const useAccountsQuery = (options?: AccountsQueryOptions) =>
     getAccountsAxios,
     options
   );
+
+interface DepositWitdhrawResponse {
+  data: {
+    timestamp: Date;
+    bnb: { deposit: number; withdraw: number };
+    usdc: { deposit: number; withdraw: number };
+    dai: { deposit: number; withdraw: number };
+  }[];
+}
+type DepositWithdrawQueryOptions = UseQueryOptions<
+  DepositWitdhrawResponse,
+  AxiosError<DepositWitdhrawResponse, null>
+>;
+const getDepositWithdrawAxios = async () =>
+  (await api.get<DepositWitdhrawResponse>('/deposit-withdraw')).data;
+
+export const useDepositWithdrawQuery = (options?: DepositWithdrawQueryOptions) =>
+  useQuery<DepositWitdhrawResponse, AxiosError<DepositWitdhrawResponse, null>>(
+    ['depositWithdraw', 'get-depositWithdraw'],
+    getDepositWithdrawAxios,
+    options
+  );

@@ -25,9 +25,7 @@ const BlockPage = () => {
     isFetching,
     hasNextPage,
     fetchNextPage,
-  } = useBlocksInfinityQueries(queryOptions, {
-    suspense: true,
-  });
+  } = useBlocksInfinityQueries(queryOptions, {});
 
   const blocks = useMemo(() => blockData?.pages.flatMap(p => p.blocks), [blockData]);
 

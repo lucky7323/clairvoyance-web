@@ -38,34 +38,38 @@ const MainPage = () => {
         <AccountsChart>
           <ChartTitle>Total Accounts</ChartTitle>
           <ResponsiveContainer width={'100%'} height={'100%'} minHeight={300}>
-            <LineChart
-              width={900}
-              height={300}
-              data={registerData?.data}
-              margin={{
-                top: 35,
-                right: 30,
-                left: 20,
-                bottom: 50,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis
-                dataKey="timestamp"
-                domain={['dataMin', 'dataMax']}
-                tickFormatter={tick => new Date(tick).toLocaleDateString()}
+            {registerData?.data ? (
+              <LineChart
+                width={900}
+                height={300}
+                data={registerData?.data}
+                margin={{
+                  top: 35,
+                  right: 30,
+                  left: 20,
+                  bottom: 50,
+                }}
               >
-                <Label dy={20}>date</Label>
-              </XAxis>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis
+                  dataKey="timestamp"
+                  domain={['dataMin', 'dataMax']}
+                  tickFormatter={tick => new Date(tick).toLocaleDateString()}
+                >
+                  <Label dy={20}>date</Label>
+                </XAxis>
 
-              <YAxis>
-                <Label angle={-90} dx={-20}>
-                  total accounts
-                </Label>
-              </YAxis>
-              <Tooltip />
-              <Line type="monotone" dataKey="amount" name="total accounts" stroke="#82ca9d" />
-            </LineChart>
+                <YAxis>
+                  <Label angle={-90} dx={-20}>
+                    total accounts
+                  </Label>
+                </YAxis>
+                <Tooltip />
+                <Line type="monotone" dataKey="amount" name="total accounts" stroke="#82ca9d" />
+              </LineChart>
+            ) : (
+              <></>
+            )}
           </ResponsiveContainer>
         </AccountsChart>
         <TransactionChart>

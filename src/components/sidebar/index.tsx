@@ -60,7 +60,11 @@ export const Sidebar = () => {
             <Menu
               key={path}
               activated={location.pathname.includes(activeKeyword).toString()}
-              onClick={() => navigate(path)}
+              onClick={() => {
+                name == 'Account' || name == 'NFT'
+                  ? console.log('not implemented')
+                  : navigate(path);
+              }}
             >
               {location.pathname.includes(activeKeyword) ? iconActive : icon}
               {<MenuText>{name}</MenuText>}

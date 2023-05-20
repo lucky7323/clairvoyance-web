@@ -195,4 +195,34 @@ export const apiAccounts = [
 
     return res(ctx.status(200), ctx.json({ data }));
   }),
+
+  ///////////////////// fees
+  rest.get(`${API_URL}/fees`, async (_req, res, ctx) => {
+    const data: {
+      timestamp: Date;
+      fee: number;
+    }[] = [];
+    for (let i = 3; i < 22; ++i) {
+      const feeData = blockDB.txs.findMany({
+        where: {
+          created_at: {
+            gte: new Date(2023, 4, i).getTime() / 1000,
+            lt: new Date(2023, 4, i + 1).getTime() / 1000,
+          },
+        },
+      });
+
+      let feeAmount = 0;
+      feeData.map(v => {
+        feeAmount += Number(ethers.utils.formatUnits(v.gas_fee, 18));
+      });
+
+      data.push({
+        timestamp: new Date(2023, 4, i),
+        fee: feeAmount,
+      });
+    }
+
+    return res(ctx.status(200), ctx.json({ data }));
+  }),
 ];

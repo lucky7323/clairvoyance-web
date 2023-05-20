@@ -10,7 +10,7 @@ import {
 } from 'recharts';
 import tw from 'twin.macro';
 
-import { useAccountsQuery, useTransactionsQuery } from '~/api/accounts';
+import { useAccountsQuery, useFeesQuery, useTransactionsQuery } from '~/api/accounts';
 import { Footer } from '~/components/footer';
 import { Gnb } from '~/components/gnb';
 import { Sidebar } from '~/components/sidebar';
@@ -27,6 +27,14 @@ const MainPage = () => {
     staleTime: Infinity,
     enabled: true,
   });
+
+  const { data: fees } = useFeesQuery({
+    cacheTime: Infinity,
+    staleTime: Infinity,
+    enabled: true,
+  });
+
+  console.log(fees?.data);
 
   return (
     <Wrapper>
@@ -107,6 +115,39 @@ const MainPage = () => {
             ) : (
               <></>
             )}
+          </ResponsiveContainer>
+        </TransactionChart>
+        <TransactionChart>
+          <ChartTitle>Total Fees</ChartTitle>
+          <ResponsiveContainer width={'100%'} height={'100%'} minHeight={300}>
+            <LineChart
+              width={900}
+              height={300}
+              data={fees?.data}
+              margin={{
+                top: 35,
+                right: 30,
+                left: 20,
+                bottom: 50,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="timestamp"
+                domain={['dataMin', 'dataMax']}
+                tickFormatter={tick => new Date(tick).toLocaleDateString()}
+              >
+                <Label dy={20}>date</Label>
+              </XAxis>
+              <YAxis>
+                <Label angle={-90} dx={-20}>
+                  total fees
+                </Label>
+              </YAxis>
+
+              <Tooltip />
+              <Line type="monotone" dataKey="fees" name="total fees" stroke="#82ca9d" />
+            </LineChart>
           </ResponsiveContainer>
         </TransactionChart>
         <Footer />

@@ -54,3 +54,19 @@ export const useDepositWithdrawQuery = (options?: DepositWithdrawQueryOptions) =
     getDepositWithdrawAxios,
     options
   );
+
+interface FeesResponse {
+  data: {
+    timestamp: Date;
+    fess: number;
+  }[];
+}
+type FeesQueryOptions = UseQueryOptions<FeesResponse, AxiosError<FeesResponse, null>>;
+const getFeesAxios = async () => (await api.get<FeesResponse>('/fees')).data;
+
+export const useFeesQuery = (options?: FeesQueryOptions) =>
+  useQuery<FeesResponse, AxiosError<FeesResponse, null>>(
+    ['fees', 'get-fees'],
+    getFeesAxios,
+    options
+  );

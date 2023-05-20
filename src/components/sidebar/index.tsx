@@ -59,6 +59,7 @@ export const Sidebar = () => {
           {SIDEBAR_MENU.map(({ path, name, activeKeyword, icon, iconActive }) => (
             <Menu
               key={path}
+              disabled={name == 'Account' || name == 'NFT'}
               activated={location.pathname.includes(activeKeyword).toString()}
               onClick={() => {
                 name == 'Account' || name == 'NFT'
@@ -98,10 +99,12 @@ const MenuText = tw.span`
 
 interface MenuProps {
   activated?: string;
+  disabled?: boolean;
 }
-const Menu = styled.div<MenuProps>(({ activated }) => [
+const Menu = styled.div<MenuProps>(({ activated, disabled }) => [
   tw`
     flex items-start p-14 gap-16 rounded-8 w-208 hover:bg-gray6 clickable
   `,
   activated === 'true' && tw`bg-gray6`,
+  disabled && tw`non-clickable hover:bg-transparent`,
 ]);

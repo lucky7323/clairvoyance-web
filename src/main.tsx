@@ -13,18 +13,27 @@ import { WagmiConfig } from 'wagmi';
 import App from '~/app.tsx';
 import { client } from '~/configs/setup-wallet';
 
+import { mockServiceWorker } from './__mocks__';
+
+const IS_MOCK = true;
+if (IS_MOCK) {
+  mockServiceWorker.start({
+    onUnhandledRequest: 'bypass',
+  });
+}
+
 const queryClient = new QueryClient();
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <WagmiConfig client={client}>
+    <WagmiConfig client={client}>
+      <QueryClientProvider client={queryClient}>
         <ConnectKitProvider theme="auto" mode="dark">
           <App />
         </ConnectKitProvider>
-      </WagmiConfig>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </WagmiConfig>
   </React.StrictMode>
 );

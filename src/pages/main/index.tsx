@@ -1,10 +1,19 @@
 import tw from 'twin.macro';
 
+import { useAccountDiscoversQuery } from '~/api/accounts';
 import { Footer } from '~/components/footer';
 import { Gnb } from '~/components/gnb';
 import { Sidebar } from '~/components/sidebar';
 
 const MainPage = () => {
+  const { data } = useAccountDiscoversQuery({
+    cacheTime: Infinity,
+    staleTime: Infinity,
+    enabled: true,
+  });
+
+  console.log('data:', data);
+
   return (
     <Wrapper>
       <Sidebar />
@@ -12,7 +21,7 @@ const MainPage = () => {
         <GnbWrapper>
           <Gnb />
         </GnbWrapper>
-        <ContentWrapper />
+        <ContentWrapper>{data?.data}</ContentWrapper>
         <Footer />
       </InnerWrapper>
     </Wrapper>

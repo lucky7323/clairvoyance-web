@@ -8,7 +8,9 @@ export const IS_PROD = import.meta.env.VITE_START_ENV === 'prod';
 export const IS_MAINNET = IS_PROD;
 
 export const API_URL = IS_PROD ? '' : 'http://localhost:8080';
-export const ZK_API_URL = IS_PROD ? '' : 'https://testapi.zkbnbchain.org/api/v1';
+export const ZK_API_URL = IS_PROD
+  ? 'https://testapi.zkbnbchain.org/api/v1'
+  : 'https://testapi.zkbnbchain.org/api/v1';
 export const BASE_URL = IS_PROD ? '' : 'http://localhost:3000';
 
 export const BREAKPOINT = {

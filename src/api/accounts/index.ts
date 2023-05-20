@@ -3,28 +3,32 @@ import { AxiosError } from 'axios';
 
 import { api } from '~/api/axios';
 
-interface AccountDiscoversResponse {
+interface TransactionsResponse {
   data: { numTx: number; timestamp: Date }[];
 }
-type AccountDiscoversQueryOptions = UseQueryOptions<
-  AccountDiscoversResponse,
-  AxiosError<AccountDiscoversResponse, null>
+type TransactionsQueryOptions = UseQueryOptions<
+  TransactionsResponse,
+  AxiosError<TransactionsResponse, null>
 >;
-const getAccountDiscoversAxios = async () =>
-  (await api.get<AccountDiscoversResponse>('/accounts')).data;
+const getTransactionsAxios = async () =>
+  (await api.get<TransactionsResponse>('/transactions')).data;
 
-export const useAccountDiscoversQuery = (options?: AccountDiscoversQueryOptions) =>
-  useQuery<AccountDiscoversResponse, AxiosError<AccountDiscoversResponse, null>>(
-    ['accounts', 'get-account-discovers'],
-    getAccountDiscoversAxios,
+export const useTransactionsQuery = (options?: TransactionsQueryOptions) =>
+  useQuery<TransactionsResponse, AxiosError<TransactionsResponse, null>>(
+    ['transactions', 'get-transactions'],
+    getTransactionsAxios,
     options
   );
 
-const getTestAxios = async () => (await api.get<AccountDiscoversResponse>('/test')).data;
+interface AccountsResponse {
+  data: { timestamp: Date; amount: number }[];
+}
+type AccountsQueryOptions = UseQueryOptions<AccountsResponse, AxiosError<AccountsResponse, null>>;
+const getAccountsAxios = async () => (await api.get<AccountsResponse>('/accounts')).data;
 
-export const useTestQuery = (options?: AccountDiscoversQueryOptions) =>
-  useQuery<AccountDiscoversResponse, AxiosError<AccountDiscoversResponse, null>>(
-    ['test', 'get-test'],
-    getTestAxios,
+export const useAccountsQuery = (options?: AccountsQueryOptions) =>
+  useQuery<AccountsResponse, AxiosError<AccountsResponse, null>>(
+    ['accounts', 'get-accounts'],
+    getAccountsAxios,
     options
   );

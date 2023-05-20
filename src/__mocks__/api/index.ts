@@ -1,3 +1,3 @@
-import { apiAccounts } from './accounts';
+import { apiAccounts } from './blocks';
 
 export default [...apiAccounts];

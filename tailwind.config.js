@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
 
-const spacing = [...[...Array(201).keys()]];
+const spacing = [...[...Array(201).keys()], 208, 248, 300, 400, 810];
 
 const convertSpacing = spacing =>
   [...new Set(spacing)].reduce((res, space) => {
@@ -28,10 +28,10 @@ module.exports = {
       colors: {
         ...defaultTheme.colors,
 
-        black: '#191F28',
+        black: '#14151A',
         white: '#FFFFFF',
 
-        gray7: '#1F2732',
+        gray7: '#1E2026',
         gray6: '#333D4B',
         gray5: '#515A68',
         gray4: '#6D7684',
@@ -102,6 +102,17 @@ module.exports = {
       zIndex: theme => ({
         ...defaultTheme.zIndex,
         ...convertSpacingWithoutPx([...Array(101).keys()]),
+        995: 995,
+        996: 996,
+        997: 997,
+        998: 998,
+        999: 999,
+        1000: 1000,
+        1001: 1001,
+        1002: 1002,
+        1003: 1003,
+        1004: 1004,
+        1005: 1005,
       }),
     },
   },
@@ -151,6 +162,28 @@ module.exports = {
           transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
           transitionDuration: '150ms',
         },
+
+        '.font-l-11': { fontSize: '11px', lineHeight: '18px', fontWeight: 300 },
+        '.font-l-12': { fontSize: '12px', lineHeight: '20px', fontWeight: 300 },
+        '.font-l-14': { fontSize: '14px', lineHeight: '22px', fontWeight: 300 },
+        '.font-l-16': { fontSize: '16px', lineHeight: '26px', fontWeight: 300 },
+        '.font-l-18': { fontSize: '18px', lineHeight: '28px', fontWeight: 300 },
+
+        '.font-r-11': { fontSize: '11px', lineHeight: '18px', fontWeight: 400 },
+        '.font-r-12': { fontSize: '12px', lineHeight: '20px', fontWeight: 400 },
+        '.font-r-14': { fontSize: '14px', lineHeight: '22px', fontWeight: 400 },
+        '.font-r-16': { fontSize: '16px', lineHeight: '26px', fontWeight: 400 },
+        '.font-r-18': { fontSize: '18px', lineHeight: '28px', fontWeight: 400 },
+        '.font-r-20': { fontSize: '20px', lineHeight: '30px', fontWeight: 400 },
+        '.font-r-24': { fontSize: '24px', lineHeight: '32px', fontWeight: 400 },
+
+        '.font-sb-12': { fontSize: '12px', lineHeight: '20px', fontWeight: 600 },
+        '.font-sb-14': { fontSize: '14px', lineHeight: '22px', fontWeight: 600 },
+        '.font-sb-16': { fontSize: '16px', lineHeight: '26px', fontWeight: 600 },
+        '.font-sb-18': { fontSize: '18px', lineHeight: '28px', fontWeight: 600 },
+        '.font-sb-20': { fontSize: '20px', lineHeight: '30px', fontWeight: 600 },
+        '.font-sb-24': { fontSize: '24px', lineHeight: '32px', fontWeight: 600 },
+        '.font-sb-28': { fontSize: '28px', lineHeight: '38px', fontWeight: 600 },
       });
       addUtilities({});
     }),

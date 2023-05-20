@@ -19,3 +19,12 @@ export const useAccountDiscoversQuery = (options?: AccountDiscoversQueryOptions)
     getAccountDiscoversAxios,
     options
   );
+
+const getTestAxios = async () => (await api.get<AccountDiscoversResponse>('/test')).data;
+
+export const useTestQuery = (options?: AccountDiscoversQueryOptions) =>
+  useQuery<AccountDiscoversResponse, AxiosError<AccountDiscoversResponse, null>>(
+    ['test', 'get-test'],
+    getTestAxios,
+    options
+  );

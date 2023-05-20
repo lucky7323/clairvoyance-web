@@ -1,6 +1,6 @@
 import tw from 'twin.macro';
 
-import { useAccountDiscoversQuery } from '~/api/accounts';
+import { useAccountDiscoversQuery, useTestQuery } from '~/api/accounts';
 import { Footer } from '~/components/footer';
 import { Gnb } from '~/components/gnb';
 import { Sidebar } from '~/components/sidebar';
@@ -12,7 +12,14 @@ const MainPage = () => {
     enabled: true,
   });
 
-  console.log('data:', data);
+  const { data: test } = useTestQuery({
+    cacheTime: Infinity,
+    staleTime: Infinity,
+    enabled: true,
+  });
+
+  console.log('data: ', data);
+  console.log('test: ', test);
 
   return (
     <Wrapper>

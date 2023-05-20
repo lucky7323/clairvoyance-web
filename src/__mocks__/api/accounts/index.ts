@@ -9,4 +9,12 @@ export const apiAccounts = [
 
     return res(ctx.status(200), ctx.json({ data }));
   }),
+
+  rest.get(`${API_URL}/test`, (req, res, ctx) => {
+    console.log(req);
+
+    const data = 10;
+
+    return res(ctx.status(200), ctx.json({ data }));
+  }),
 ];

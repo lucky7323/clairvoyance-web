@@ -14,6 +14,8 @@
     "check:type": "tsc --p ./tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@bnb-chain/zkbnb-js-l1-sdk": "^1.0.1",
+    "@bnb-chain/zkbnb-js-sdk": "^4.5.0",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@tanstack/react-query": "^4.29.5",

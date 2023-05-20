@@ -1447,6 +1447,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@bnb-chain/zkbnb-js-l1-sdk@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@bnb-chain/zkbnb-js-l1-sdk@npm:1.0.1"
+  dependencies:
+    axios: ^0.21.2
+    ethers: ^5.7.2
+  checksum: 0cde24c03c1f43bb41c48fded020030d525f4fe799c7d4a1496fd737fd05422aa2c797773199601654293999d4f23213cc8b61f74f0aaa024eb9d78986d60f5b
+  languageName: node
+  linkType: hard
+
+"@bnb-chain/zkbnb-js-sdk@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "@bnb-chain/zkbnb-js-sdk@npm:4.5.0"
+  dependencies:
+    "@types/node": ^18.13.0
+    lodash: ^4.17.21
+    shelljs: ^0.8.5
+  checksum: f1fc4be544949aa1c48728f322c7aa95f73cb72c1718524bfd1fe8947de85de75aeeb960847d0d8b1227091d01adb5ec00530ddc25fe2bd3c6afdf9687d1f50f
+  languageName: node
+  linkType: hard
+
 "@coinbase/wallet-sdk@npm:^3.6.4":
   version: 3.7.1
   resolution: "@coinbase/wallet-sdk@npm:3.7.1"
@@ -4426,6 +4447,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^18.13.0":
+  version: 18.16.13
+  resolution: "@types/node@npm:18.16.13"
+  checksum: ec1ffb814750fc7f7c6c7cb138ed56f24cb23a2ffe50d264a265be52b5cafca37b94b8fb3b5b420f5674baa677b0e011160aeaa1a0edd862aa4cfa11f4467918
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.1
   resolution: "@types/normalize-package-data@npm:2.4.1"
@@ -5872,7 +5900,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.21.0":
+"axios@npm:^0.21.0, axios@npm:^0.21.2":
   version: 0.21.4
   resolution: "axios@npm:0.21.4"
   dependencies:
@@ -6541,6 +6569,8 @@ __metadata:
     "@babel/core": ^7.21.5
     "@babel/plugin-transform-react-jsx": ^7.21.5
     "@babel/runtime": ^7.21.5
+    "@bnb-chain/zkbnb-js-l1-sdk": ^1.0.1
+    "@bnb-chain/zkbnb-js-sdk": ^4.5.0
     "@emotion/babel-plugin-jsx-pragmatic": ^0.2.0
     "@emotion/react": ^11.10.8
     "@emotion/styled": ^11.10.8

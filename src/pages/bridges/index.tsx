@@ -37,6 +37,7 @@ const BridgePage = () => {
               <BarChart
                 width={900}
                 height={300}
+                stackOffset="sign"
                 data={data?.data}
                 margin={{
                   top: 20,
@@ -71,6 +72,7 @@ const BridgePage = () => {
               <BarChart
                 width={900}
                 height={300}
+                stackOffset="sign"
                 data={data?.data}
                 margin={{
                   top: 20,
@@ -105,6 +107,7 @@ const BridgePage = () => {
               <BarChart
                 width={900}
                 height={300}
+                stackOffset="sign"
                 data={data?.data}
                 margin={{
                   top: 20,

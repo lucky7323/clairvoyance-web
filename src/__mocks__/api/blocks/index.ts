@@ -180,15 +180,15 @@ export const apiAccounts = [
         timestamp: new Date(2023, 4, i),
         bnb: {
           deposit: depositBnbAmount,
-          withdraw: withdrawBnbAmount,
+          withdraw: -withdrawBnbAmount,
         },
         usdc: {
           deposit: depositUsdcAmount,
-          withdraw: withdrawUsdcAmount,
+          withdraw: -withdrawUsdcAmount,
         },
         dai: {
           deposit: depositDaiAmount,
-          withdraw: withdrawDaiAmount,
+          withdraw: -withdrawDaiAmount,
         },
       });
     }

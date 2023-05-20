@@ -6,6 +6,7 @@ import { useChangeWallet } from '~/hooks/data/use-change-wallet';
 import BlockPage from './pages/blocks';
 import BridgePage from './pages/bridges';
 import MainPage from './pages/main';
+import TransactionPage from './pages/transactions';
 
 const RouteWrapper = tw.main`relative w-full h-full`;
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/home" element={<MainPage />} />
           <Route path="/block" element={<BlockPage />} />
           <Route path="/bridge" element={<BridgePage />} />
+          <Route path="/transaction" element={<TransactionPage />} />
           {/* <Route path="/account" element={<MainPage />} />
           <Route path="/nft" element={<MainPage />} /> */}
 

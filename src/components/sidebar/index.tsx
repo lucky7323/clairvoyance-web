@@ -30,6 +30,13 @@ export const SIDEBAR_MENU = [
     icon: <IconProfileFill color={COLOR.WHITE} />,
   },
   {
+    path: '/transaction',
+    activeKeyword: 'transaction',
+    name: 'Transactions',
+    iconActive: <IconProfileFill color={COLOR.WHITE} />,
+    icon: <IconProfileFill color={COLOR.WHITE} />,
+  },
+  {
     path: '/account',
     activeKeyword: 'account',
     name: 'Account',
